@@ -42,7 +42,7 @@ $(document).ready(function(){
 		smoothPlayBar: true,
 		keyEnabled: true
 	});*/
-	var id = "37295125";
+	var id = "57741682" || window.location.search.substring(1);
 	var url = "http://zhanhao.sturgeon.mopaas.com/music/getPlayList?listId="+id;
 	$.getJSON(url, function(data) {
 		//console.log(data);
