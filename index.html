@@ -18,7 +18,7 @@
 //<![CDATA[
 $(document).ready(function(){
 
-	new jPlayerPlaylist({
+	/*new jPlayerPlaylist({
 		jPlayer: "#jquery_jplayer_1",
 		cssSelectorAncestor: "#jp_container_1"
 	}, [
@@ -41,7 +41,51 @@ $(document).ready(function(){
 		wmode: "window",
 		smoothPlayBar: true,
 		keyEnabled: true
+	});*/
+	var id = "57500331";
+	var url = "http://zhanhao.sturgeon.mopaas.com/music/getPlayList?listId="+id;
+	$.getJSON(url, function(data) {
+		//console.log(data);
+		if(data.result == "0") {
+
+			var songList = [];
+
+			data.list.forEach(function(e) {
+				var song = {};
+				song.title = e.name;
+				song.mp3 = e.url;
+				songList.push(song);
+			});
+
+
+			new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_1",
+				cssSelectorAncestor: "#jp_container_1"
+			}, songList, {
+				swfPath: "js",
+				supplied: "oga, mp3",
+				wmode: "window",
+				smoothPlayBar: true,
+				keyEnabled: true
+			});
+
+		} else {
+			console.log(data.msg);
+		}
+		/*new jPlayerPlaylist({
+			jPlayer: "#jquery_jplayer_1",
+			cssSelectorAncestor: "#jp_container_1"
+		}, songList, {
+			swfPath: "js",
+			supplied: "oga, mp3",
+			wmode: "window",
+			smoothPlayBar: true,
+			keyEnabled: true
+		});*/
+
 	});
+
+	
 });
 //]]>
 
