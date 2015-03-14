@@ -62,7 +62,7 @@ $(document).ready(function(){
 				jPlayer: "#jquery_jplayer_1",
 				cssSelectorAncestor: "#jp_container_1"
 			}, songList, {
-				swfPath: "js",
+				swfPath: "js/jplayer",
 				supplied: "oga, mp3",
 				wmode: "window",
 				smoothPlayBar: true,
@@ -72,16 +72,7 @@ $(document).ready(function(){
 		} else {
 			console.log(data.msg);
 		}
-		/*new jPlayerPlaylist({
-			jPlayer: "#jquery_jplayer_1",
-			cssSelectorAncestor: "#jp_container_1"
-		}, songList, {
-			swfPath: "js",
-			supplied: "oga, mp3",
-			wmode: "window",
-			smoothPlayBar: true,
-			keyEnabled: true
-		});*/
+		
 
 	});
 
@@ -100,7 +91,12 @@ function toggleDuoshuoComments(container){
 </script>
 </head>
 <body>
-
+		<div id="song-list">
+			<span>歌单</span>
+			<a href="?">默认</a>
+			<a href="?57500331">周杰伦</a>
+			<a href="?58506641">陈奕迅</a>
+		</div>
 		<div id="jquery_jplayer_1" class="jp-jplayer"></div>
 
 		<div id="jp_container_1" class="jp-audio">
