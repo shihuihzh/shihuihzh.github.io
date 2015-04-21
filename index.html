@@ -43,7 +43,7 @@ $(document).ready(function(){
 		keyEnabled: true
 	});*/
 	var id =  window.location.search.substring(1) || "37295125";
-	var url = "http://zhanhao.sturgeon.mopaas.com/music/getPlayList?listId="+id;
+	var url = "http://blogend.oschina.mopaas.com/music/getPlayList?listId="+id;
 	$.getJSON(url, function(data) {
 		//console.log(data);
 		if(data.result == "0") {
